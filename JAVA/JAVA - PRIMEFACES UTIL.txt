@@ -1,0 +1,2 @@
+PrimeFaces.current().ajax().update("formHistorico:itensHistorico");
+PrimeFaces.current().executeScript("PF('historicoCliente').show();");

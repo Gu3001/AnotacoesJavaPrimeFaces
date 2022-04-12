@@ -1,0 +1,7 @@
+<f:metadata>  
+     <f:event type="preRenderView" listener="#{contasPagarControle.carregaContasVencendo()}"/>  
+</f:metadata>
+
+<f:metadata>  
+     <f:viewAction action="#{cartaoCreditoControle.carregaCartoesCredito()}" />
+</f:metadata> 

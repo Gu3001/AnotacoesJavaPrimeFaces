@@ -1,0 +1,4 @@
+select produto.nome, produto.id , produto.ncmString, produto.cfopd, produto.cfopf from venda
+inner join item_Venda on venda_id = venda.id
+inner join produto on produto.id = item_venda.plantio_id
+where venda.id = 1

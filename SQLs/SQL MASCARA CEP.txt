@@ -1,0 +1,3 @@
+UPDATE pessoa
+SET cep = LEFT(cep, 5) || '-' || RIGHT(cep, length(cep) - 5)
+WHERE length(cep) != 9

@@ -1,0 +1,11 @@
+CREATE TABLE func (
+  id SERIAL,
+  nome VARCHAR(255),
+  PRIMARY KEY (id)
+);
+
+
+COPY func(id, nome)
+FROM 'C:\ImportacaoSouza\func.csv'
+DELIMITER ';'
+CSV HEADER;

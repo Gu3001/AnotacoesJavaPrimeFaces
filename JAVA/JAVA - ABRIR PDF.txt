@@ -1,0 +1,4 @@
+<p:commandButton value="Imprimir Contrato em Branco" 
+                                     onclick="window.open('../contrato/contratoembranco.pdf')"
+                                     ajax="false"/>
+

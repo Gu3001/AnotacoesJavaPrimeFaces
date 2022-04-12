@@ -1,0 +1,10 @@
+PrintWriter arquivo;
+        try {
+            arquivo = new PrintWriter(new OutputStreamWriter(new FileOutputStream("C:\\Infomania Sistemas\\NFE\\nfe\\envia\\nfe" + numeroNfe + ".tx2"), "UTF-8"));
+            arquivo.write(tx2);
+            arquivo.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }

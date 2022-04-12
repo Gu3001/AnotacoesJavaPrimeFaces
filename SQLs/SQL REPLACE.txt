@@ -1,0 +1,10 @@
+UPDATE 
+   pessoa
+SET 
+   endereco = REPLACE(endereco, 'º', '')
+WHERE 
+   endereco LIKE '%º%'
+
+
+SELECT * FROM pessoa
+WHERE endereco LIKE '%º%'

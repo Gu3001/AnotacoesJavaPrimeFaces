@@ -1,0 +1,6 @@
+SELECT p.nome, p.cfopd, p.cfopf, p.ncmstring FROM item_venda AS iv
+INNER JOIN produto AS p ON p.id = iv.plantio_id
+WHERE iv.venda_id = 75271
+AND (LENGTH(p.cfopd) != 4
+OR LENGTH(p.cfopf) != 4
+OR LENGTH(p.ncmstring) != 8);

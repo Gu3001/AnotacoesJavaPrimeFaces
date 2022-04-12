@@ -1,0 +1,10 @@
+--19;"GURIVA CAVALCANTI SOARES DE SOUZA"
+--20;"SILMAR RIBEIRO MARANHAO"
+--21;"MANOEL DE ALMEIDA FERREIRA"
+--27;"EDUARDO PINTO NOBRE"
+--372;"GILTON PEIXE MEDEIROS"
+
+SELECT 'INSERT INTO carteira_clientes (id, funcionario_id, pessoa_pes_id) VALUES (1, 372, ' || pessoa_pes_id || ');' FROM venda
+WHERE funcionario_id = 372
+GROUP BY pessoa_pes_id
+ORDER BY pessoa_pes_id ASC;

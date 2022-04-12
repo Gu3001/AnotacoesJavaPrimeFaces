@@ -1,0 +1,8 @@
+UPDATE lacamentobancario
+   SET interno = SUBSTR(interno,7, LENGTH(interno));
+
+UPDATE lacamentobancario
+SET interno = LEFT(interno, 2) || ':' || RIGHT(interno, length(interno) - 2)
+
+UPDATE lacamentobancario
+SET interno = LEFT(interno, 5) || ':' || RIGHT(interno, length(interno) - 5)

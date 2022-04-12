@@ -1,0 +1,8 @@
+SELECT b.venda_id, v.dtvenda, v.pessoastring, COUNT(*), (SELECT COUNT(*) FROM contasreceber WHERE venda_id = b.venda_id GROUP BY venda_id) FROM boleto AS b
+INNER JOIN venda AS v ON b.venda_id = v.id
+WHERE v.vendacancelada IS FALSE
+AND v.vendaeditada IS FALSE
+AND v.venda IS TRUE
+AND v.vendafiscal IS FALSE
+GROUP BY venda_id, v.dtvenda, v.pessoastring
+ORDER BY venda_id ASC;

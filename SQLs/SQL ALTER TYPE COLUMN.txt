@@ -1,0 +1,1 @@
+alter table FUNCIONARIO alter column codigo type bigint using codigo::bigint;

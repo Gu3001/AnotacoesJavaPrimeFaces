@@ -1,0 +1,1 @@
+RequestContext.getCurrentInstance().execute("playAudio();");

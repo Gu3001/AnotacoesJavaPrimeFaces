@@ -1,0 +1,30 @@
+UPDATE pes_juridica
+SET razaosocial = p.nome
+FROM pessoa p
+WHERE pes_juridica.pes_id = p.pes_id
+
+
+UPDATE pessoa
+SET nome = pj.nome_fantasia
+FROM pes_juridica pj
+WHERE pessoa.pes_id = pj.pes_id
+AND pj.nome_fantasia != ''
+
+
+UPDATE item_venda
+SET nome = p.nome
+FROM produto p
+WHERE item_venda.plantio_id = p.id
+
+
+UPDATE lacamentobancario
+SET pessoaString = p.nome
+FROM pessoa p
+WHERE lacamentobancario.pessoa_pes_id = p.pes_id
+
+
+
+UPDATE lacamentobancario
+SET pessoaString = f.nome
+FROM fornecedor f
+WHERE lacamentobancario.fornecedor_id = f.id

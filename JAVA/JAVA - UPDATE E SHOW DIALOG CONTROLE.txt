@@ -1,0 +1,2 @@
+org.primefaces.context.DefaultRequestContext.getCurrentInstance().update("form:dlgOpcao");
+org.primefaces.context.RequestContext.getCurrentInstance().execute("PF('dialogOpcao').show();");

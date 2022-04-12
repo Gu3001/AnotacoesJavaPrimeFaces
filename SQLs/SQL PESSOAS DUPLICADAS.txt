@@ -1,0 +1,3 @@
+DELETE FROM pessoa 
+WHERE nome in (SELECT nome FROM pessoa GROUP BY nome HAVING COUNT(nome)>1) 
+AND NOT pes_id in (SELECT min(pes_id) FROM pessoa GROUP BY nome HAVING COUNT(nome)>1)

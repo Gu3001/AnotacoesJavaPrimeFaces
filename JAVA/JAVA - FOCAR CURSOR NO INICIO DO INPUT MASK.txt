@@ -1,0 +1,1 @@
+onclick="this.selectionStart = 0;"

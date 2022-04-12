@@ -1,0 +1,4 @@
+INSERT INTO pes_fisica (pes_id) 
+SELECT pes_id FROM pessoa AS p
+WHERE p.pes_id NOT IN (SELECT pes_id FROM pes_fisica)
+AND p.pes_id NOT IN (SELECT pes_id FROM pes_juridica)

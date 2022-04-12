@@ -1,0 +1,2 @@
+org.primefaces.context.DefaultRequestContext.getCurrentInstance().update("dialogForm:dlgMessageError");
+            org.primefaces.context.RequestContext.getCurrentInstance().execute("PF('dialogMessageError').show();");

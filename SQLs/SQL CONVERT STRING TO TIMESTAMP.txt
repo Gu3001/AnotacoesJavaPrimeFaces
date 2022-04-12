@@ -1,0 +1,22 @@
+ALTER TABLE lacamentobancario
+ADD COLUMN datastring VARCHAR(255);
+
+UPDATE lacamentobancario
+SET datastring = dtmovimento;
+
+UPDATE lacamentobancario
+SET datastring = SUBSTR(datastring,12, LENGTH(datastring));
+
+UPDATE lacamentobancario
+SET datastring = dtentrada || ' ' || datastring;
+
+ALTER TABLE lacamentobancario
+ALTER datastring DROP DEFAULT,
+ALTER datastring type timestamp USING datastring::timestamp,
+ALTER datastring SET DEFAULT '1970-01-01 01:00:00'::timestamp;
+
+UPDATE lacamentobancario
+SET dtmovimento = datastring;
+
+ALTER TABLE lacamentobancario
+DROP COLUMN datastring;

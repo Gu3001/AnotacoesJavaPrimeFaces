@@ -1,0 +1,42 @@
+-- CRIANDO COLUNA AUXILIAR PARA CASTING TIMESTAMP
+ALTER TABLE lacamentobancario
+ADD COLUMN data_string VARCHAR(255) NULL
+
+UPDATE lacamentobancario
+SET data_string = dtmovimento
+
+
+
+-- CRIANDO COLUNA AUXILIAR PARA CASTING TIMESTAMP
+ALTER TABLE lacamentobancario
+ADD COLUMN hora_string VARCHAR(255) NULL
+
+UPDATE lacamentobancario
+SET hora_string = SUBSTR(data_string,12, LENGTH(data_string));
+
+
+
+-- CRIANDO COLUNA AUXILIAR PARA CASTING TIMESTAMP
+ALTER TABLE lacamentobancario
+ADD COLUMN data_string_final VARCHAR(255) NULL
+
+UPDATE lacamentobancario
+SET data_string_final = dtentrada || ' ' || hora_string
+
+
+
+-- UPDATE EM COLUNA DTMOVIMENTO E CONVERTENDO STRING EM TIMESTAMP
+UPDATE lacamentobancario
+SET dtmovimento = TO_TIMESTAMP(data_string_final, 'YYYY/MM/DD HH24:MI:SS')
+WHERE retroativo IS NULL
+
+
+-- DROPANDO COLUNA AUXILIAR
+ALTER TABLE lacamentobancario
+DROP COLUMN data_string CASCADE;
+
+ALTER TABLE lacamentobancario
+DROP COLUMN hora_string CASCADE;
+
+ALTER TABLE lacamentobancario
+DROP COLUMN data_string_final CASCADE;

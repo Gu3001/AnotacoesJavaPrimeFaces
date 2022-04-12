@@ -1,0 +1,49 @@
+public void imprimirBar() throws Exception {
+
+        try {
+            String arquivoJasper;
+            JasperReport relatorio;
+            arquivoJasper = "extratoBar.jasper";
+
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            facesContext.responseComplete();
+            ServletContext scontext = (ServletContext) facesContext.getExternalContext().getContext();
+            HashMap p = new HashMap();
+            p.put("aux", mesa.getId());
+
+            System.out.println("IDMESA" + mesa.getId());
+            JasperPrint jasperPrint = JasperFillManager.fillReport(scontext.getRealPath("/WEB-INF/report/" + arquivoJasper), p, Conexao.getConection());
+
+            try {
+                //Lista todas impressoras até encontrar a enviada por parametro
+                PrintService serviceFound = null;
+                PrintService[] services = PrintServiceLookup.lookupPrintServices(null, null);
+                for (PrintService service : services) {
+                    if (service.getName().trim().equals("BAR")) {
+                        serviceFound = service;
+                    }
+                }
+                if (serviceFound == null) {
+                    throw new Exception("Impressora não encontrada !");
+                }
+                JRExporter exporter = new JRPrintServiceExporter();
+                exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
+                exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE_ATTRIBUTE_SET, serviceFound.getAttributes());
+                exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PAGE_DIALOG, Boolean.FALSE);
+                exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PRINT_DIALOG, Boolean.FALSE);
+                exporter.exportReport();
+                //JasperPrintManager.printPage(jasperPrint, 0, false);
+            } catch (JRException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
