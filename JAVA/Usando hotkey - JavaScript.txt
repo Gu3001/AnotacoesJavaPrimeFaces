@@ -1,0 +1,28 @@
+            <script type="text/javascript">
+                // <![CDATA[
+                var isCtrl = false;
+                $(document).keyup(function(e) {
+
+                    if (e.which === 118 && isCtrl === false) {
+                        document.getElementById('form_botoes:btn_nfce').click();
+                    }
+                    if (e.which === 71 && isCtrl === false) {
+                        document.getElementById('form_botoes:btn_gaveta').click();
+                    }
+
+
+                });
+                // ]]>
+            </script>
+
+
+                <p:commandLink action="#{vendaControle.abrirGaveta()}" id="btn_gaveta" ajax="false">   
+                </p:commandLink>
+
+ou simplesmente:
+
+                <p:commandLink action="#{vendaControle.novo()}">
+                    <p:hotkey bind="F4" actionListener="#{vendaControle.novo()}" onstart="PF('statusDialog').show();" />
+                    <p:graphicImage value="#{vendaControle.foto}" cache="disable" style="width: 100%;"/>
+                </p:commandLink>
+
