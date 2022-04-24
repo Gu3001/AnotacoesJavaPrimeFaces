@@ -1,0 +1,8 @@
+String teste = "tes
+
+espero ter ajudadot\"e";
+teste = teste.replace('
+
+espero ter ajudado', ' ');
+teste = teste.replace('\"', ' ');
+//no final: teste = "tes t e"
