@@ -1,0 +1,6 @@
+    private Date gerarDataValidade() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.add(Calendar.DATE, itemEtiquetaExterna.getProduto().getPrazoValidadeDias());
+        return calendar.getTime();
+    }
