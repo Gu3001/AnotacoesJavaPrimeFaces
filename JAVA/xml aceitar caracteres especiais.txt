@@ -1,0 +1,4 @@
+private String encodeStringUTF8Charset(String response) {
+	byte[] responseBytes = response.getBytes();
+	return new String(responseBytes, StandardCharsets.UTF_8);
+}
