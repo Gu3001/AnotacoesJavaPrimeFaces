@@ -1,0 +1,11 @@
+ui-lg => number of columns for a large screen (screen width > 1024px)
+
+ui-md => number of columns for a medium screen (screen width < 1024px )
+
+ui-g = > number of columns by default (or screen width < 425px if lg and md columns are define)
+
+<div class="ui-g">
+	<div class="ui-g-4 ui-md-6 ui-lg-8 ui-xl-12">Col1</div>
+	<div class="ui-g-4 ui-md-6 ui-lg-8 ui-xl-12">Col2</div>
+	<div class="ui-g-4 ui-md-6 ui-lg-8 ui-xl-12">Col3</div>
+</div>
