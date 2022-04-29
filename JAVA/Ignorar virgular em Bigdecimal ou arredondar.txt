@@ -1,0 +1,7 @@
+Arredondar:
+BigDecimal valorArredondado = respostaQuest.getValor().setScale(2, BigDecimal.ROUND_DOWN);
+respostaQuest.setValor(valorArredondado);
+
+Ignorar Virgular
+BigDecimal valorArredondado = respostaQuest.getValor().setScale(0);
+respostaQuest.setValor(valorArredondado);
