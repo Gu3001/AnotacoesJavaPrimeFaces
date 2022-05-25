@@ -1,0 +1,40 @@
+            .card {
+                /* Add shadows to create the "card" effect */
+                box-shadow: 0 1px 1px 1px rgba(0,0,0,0.2) !important;
+                transition: 0.3s !important;
+                border-radius: 10px;
+            }
+
+            /* On mouse-over, add a deeper shadow */
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) !important;
+
+            }
+
+
+
+                            <p:column headerText="Cód / Nome" class="card" style="margin-top: 6px;">
+                                <p:column headerText="DESCRIÇÃO" style="text-align: left">
+                                    <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+                                        <div class="ui-g-9 ui-md-9 ui-lg-9 ui-fluid" style="text-align: left">
+                                            <p:outputLabel value="#{item.id} - #{item.nome}" /><br></br>
+                                            <h:outputText value="Data: "></h:outputText>
+                                            <h:outputText value="#{item.dtPedido}">
+                                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                            </h:outputText>
+                                        </div>
+                                        <div class="ui-g-3 ui-md-3 ui-lg-3 ui-fluid" style="text-align: right">
+                                            <p:commandLink title="Imprimir"
+                                                           actionListener="#{contratoControle.setContratoCliente2(item)}"
+                                                           action="#{relatorioControle.gerarContrato2(item)}"
+                                                           style="text-decoration: none"
+                                                           ajax="false">
+                                                <i class="icon-print" style="font-size: 20px;"/>
+                                            </p:commandLink>
+
+                                        </div>
+                                    </div>
+
+                                </p:column>
+
+                            </p:column>
