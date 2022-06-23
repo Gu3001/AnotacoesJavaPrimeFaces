@@ -1,0 +1,1 @@
+     item_ordem_servico."nome" = 'MÃO DE OBRA' AND DATE(ordem_servico."dt_abertura") BETWEEN $P{dataInicial} AND $P{dataFinal} ORDER BY ordem_servico."dt_abertura" ASC
