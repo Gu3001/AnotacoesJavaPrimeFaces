@@ -1,0 +1,18 @@
+Atualizar projeto:
+git checkout master
+git pull
+
+Criar Branch e enviar
+git branch INFO-999
+git checkout INFO-999
+Git add .
+Git commit –m”mensagem do commit”
+Git push origin INFO-999
+
+Criar branch – git branch INFO-999
+Acessar branch - git checkout INFO-999 (deve ser feito após a criação de uma branch)
+Git status – mostra os arquivos alterados.
+Git add caminho arquivo, adicionar arquivo manualmente
+Git add . – adicionar todos arquivos alterados ao commit
+Git commit –m”mensagem do commit”(padrão – INFO-001 PEQUENO RESUMO)
+Git push origin INFO-001 – envia o commit
